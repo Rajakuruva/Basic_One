@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Insert_Webpage</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="tn">Topic_name</label>
+            <select name="tn" id="tn">
+                {% for a in topic %}
+                    <option value="{{a}}">{{a.Topic_name}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <label for="nm">name</label>
+            <input type="text" name="nm" id="nm">
+            <br><br>
+            <label for="em">email</label>
+            <input type="email" name="em" id="em">
+            <br><br>
+            <label for="ur">url</label>
+            <input type="url" name="ur" id="ur">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </center>
+</body>
+</html>
